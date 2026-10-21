@@ -1,6 +1,7 @@
 # 808 Simulator
 
 808 风格鼓机项目：调研 → 音源与许可证核查 → 声音/时序原型 → 混合音源 → 可玩网页 Demo。
+<img width="1574" height="844" alt="screenshot" src="https://github.com/user-attachments/assets/6691a968-83e0-4318-b709-161b05947672" />
 
 ## 现在有什么
 
