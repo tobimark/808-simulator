@@ -1,0 +1,16 @@
+{
+  "source": "FreePats Synthesizer Percussion (CC0 1.0), 2022-07-18",
+  "source_url": "https://freepats.zenvoid.org/Percussion/electric-percussion.html",
+  "sample_rate": 48000,
+  "bpm": 120.0,
+  "bars": 4,
+  "events": 92,
+  "duration_s": 11.0,
+  "peak_dbfs": -1.01,
+  "rms_dbfs": -17.78,
+  "limitations": [
+    "kit is a synthesised approximation, not a TR-808 recording",
+    "no cowbell / rimshot / conga / maracas in the FreePats kit",
+    "no Tone/Decay/Snappy/Accent parameter modelling yet"
+  ]
+}

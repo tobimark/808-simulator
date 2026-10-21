@@ -1,0 +1,102 @@
+{
+  "baseUrl": "http://127.0.0.1:8137/",
+  "files": [
+    {
+      "name": "hats-sample",
+      "path": "web/ab-hats-sample.wav",
+      "bytes": 1319272,
+      "modes": {
+        "hats": "sample",
+        "cymbals": "sample",
+        "toms": "sample"
+      },
+      "pattern": "closed+open hats only",
+      "listen": "hi-hat timbre / metallic vs sample"
+    },
+    {
+      "name": "hats-808",
+      "path": "web/ab-hats-808.wav",
+      "bytes": 1319272,
+      "modes": {
+        "hats": "metal",
+        "cymbals": "sample",
+        "toms": "sample"
+      },
+      "pattern": "closed+open hats only",
+      "listen": "hi-hat timbre / metallic vs sample"
+    },
+    {
+      "name": "cymbal-sample",
+      "path": "web/ab-cymbal-sample.wav",
+      "bytes": 1319272,
+      "modes": {
+        "hats": "sample",
+        "cymbals": "sample",
+        "toms": "sample"
+      },
+      "pattern": "cymbal only",
+      "listen": "cymbal decay / metallic texture"
+    },
+    {
+      "name": "cymbal-808",
+      "path": "web/ab-cymbal-808.wav",
+      "bytes": 1319272,
+      "modes": {
+        "hats": "sample",
+        "cymbals": "metal",
+        "toms": "sample"
+      },
+      "pattern": "cymbal only",
+      "listen": "cymbal decay / metallic texture"
+    },
+    {
+      "name": "toms-sample",
+      "path": "web/ab-toms-sample.wav",
+      "bytes": 1319272,
+      "modes": {
+        "hats": "sample",
+        "cymbals": "sample",
+        "toms": "sample"
+      },
+      "pattern": "low/mid/high toms only",
+      "listen": "pitch drop / body vs synth toms"
+    },
+    {
+      "name": "toms-808",
+      "path": "web/ab-toms-808.wav",
+      "bytes": 1319272,
+      "modes": {
+        "hats": "sample",
+        "cymbals": "sample",
+        "toms": "synth"
+      },
+      "pattern": "low/mid/high toms only",
+      "listen": "pitch drop / body vs synth toms"
+    },
+    {
+      "name": "all-sample",
+      "path": "web/ab-all-sample.wav",
+      "bytes": 2062496,
+      "modes": {
+        "hats": "sample",
+        "cymbals": "sample",
+        "toms": "sample"
+      },
+      "pattern": "full house pattern",
+      "listen": "whole groove A/B"
+    },
+    {
+      "name": "all-808",
+      "path": "web/ab-all-808.wav",
+      "bytes": 2062496,
+      "modes": {
+        "hats": "metal",
+        "cymbals": "metal",
+        "toms": "synth"
+      },
+      "pattern": "full house pattern",
+      "listen": "whole groove A/B"
+    }
+  ],
+  "error": null
+}

@@ -1,0 +1,23 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# Node
+node_modules/
+
+# Local reference screenshots of the Roland TR-808 plugin UI.
+# Kept on the local machine for design reference only; not redistributed.
+808界面图1.jpg
+808界面图2.webp
+
+# Temporary / generated dev artifacts
+web/.cache/
+web/screenshot-selftest.png

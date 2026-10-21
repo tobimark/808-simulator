@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rhythm Composer 808 — Hybrid Web Demo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="stage">
+  <div id="machine" class="machine">
+    <span class="screw s-tl"></span>
+    <span class="screw s-tr"></span>
+    <span class="screw s-bl"></span>
+    <span class="screw s-br"></span>
+
+    <div class="machine-top">
+      <div class="brand">
+        <div class="brand-lead">RHYTHM COMPOSER</div>
+        <div class="brand-main">808</div>
+        <div class="brand-sub">HYBRID RHYTHM MACHINE · WEB DEMO</div>
+      </div>
+      <div class="top-badges">
+        <span class="badge">HYBRID ENGINE</span>
+        <span class="badge">CC0 SAMPLES</span>
+        <span class="badge">SYNTH LAYERS</span>
+      </div>
+    </div>
+
+    <div class="deck">
+      <aside class="controls">
+        <div class="lcd-group">
+          <div class="lcd" id="lcdPattern"><span class="lcd-label">PATTERN</span><span class="lcd-value">A · DEMO</span></div>
+          <div class="lcd" id="lcdKit"><span class="lcd-label">KIT</span><span class="lcd-value">HYBRID 808</span></div>
+          <div class="lcd" id="lcdStyle"><span class="lcd-label">STYLE</span><span class="lcd-value">HOUSE</span></div>
+        </div>
+
+        <div class="left-knobs">
+          <div id="volumeKnob" class="big-knob-host"></div>
+          <div id="instrumentKnob" class="big-knob-host"></div>
+        </div>
+
+        <div class="left-buttons">
+          <div class="section-label">STYLE</div>
+          <div id="styleButtons" class="style-buttons"></div>
+          <div class="section-label">PATTERN SELECT</div>
+          <div id="patternButtons" class="pattern-buttons"></div>
+          <div class="section-label">SONG · <span id="chainLength">4</span> BARS
+            <button id="songBtn" type="button" class="mini-link">EDIT ▸</button>
+          </div>
+          <div id="chainRow" class="chain-preview" title="点击打开 Song Arranger"></div>
+          <div class="loop-summary" id="loopSummary">LOOP 1–4</div>
+          <div class="section-label">TRANSPORT</div>
+          <div class="transport-row">
+            <button id="startBtn" type="button" class="btn start-btn">START<span>STOP</span></button>
+            <button id="tapBtn" type="button" class="btn">TAP</button>
+            <button id="clearBtn" type="button" class="btn" title="Clear selected channel (Shift-click: clear all)">CLEAR</button>
+            <button id="resetBtn" type="button" class="btn">RESET</button>
+            <button id="renderBtn" type="button" class="btn" title="Render the chain to a WAV file">WAV</button>
+          </div>
+          <div class="project-row">
+            <button id="exportBtn" type="button" class="btn mini" title="Download the project as JSON">EXPORT</button>
+            <button id="importBtn" type="button" class="btn mini" title="Load a project JSON file">IMPORT</button>
+            <input id="importFile" type="file" accept="application/json,.json" hidden>
+          </div>
+        </div>
+
+        <div class="left-footer">
+          <div class="status-line"><span id="playLed" class="led"></span><span id="statusText">LOADING</span></div>
+          <div class="status-sub" id="barText">BAR 1 · STEP 1</div>
+          <div class="selection-sub">EDIT: <span id="selectionHint">BASS DRUM</span></div>
+          <div class="save-state" id="saveState">LOCAL SAVE · READY</div>
+        </div>
+      </aside>
+
+      <section class="voice-deck">
+        <div class="voice-head">
+          <span class="vh-title">INSTRUMENT SECTION</span>
+          <span class="vh-sub">LEVEL · TONE · DECAY · SNAPPY · TUNING</span>
+        </div>
+        <div id="voiceModeBar" class="voice-mode-bar"></div>
+        <div id="voiceColumns" class="voice-columns"></div>
+      </section>
+    </div>
+
+    <div class="step-deck">
+      <div class="step-top">
+        <div class="step-hint">
+          STEP KEYS <span class="hint-sep">/</span>
+          EDIT <strong id="editTarget">BASS DRUM</strong>
+          <span class="hint-sep">/</span> PATTERN <strong id="editPattern">A</strong>
+          <span class="hint-sep">/</span> click a step to toggle · space starts/stops
+        </div>
+        <div class="tempo-box">
+          <label>BPM <input id="bpmInput" type="number" min="40" max="300" step="1" value="120"></label>
+          <label>SWING <input id="swingInput" type="range" min="0" max="80" step="1" value="12"></label>
+        </div>
+      </div>
+      <div id="stepKeys" class="step-keys"></div>
+      <div class="step-footer">
+        <span>STEP 1–16</span>
+        <span class="dot-legend"><i class="dot on"></i> active voice <i class="dot sel"></i> selected channel</span>
+        <span id="chainSummary">PATTERN A · A · A · B</span>
+      </div>
+    </div>
+
+    <section id="songPanel" class="song-panel hidden">
+      <div class="song-head">
+        <div class="song-title">SONG ARRANGER <span id="songBarsLabel">4 BARS</span></div>
+        <div id="songLengths" class="song-lengths"></div>
+        <div class="song-loop">
+          <span>LOOP</span>
+          <input id="loopStartInput" type="number" min="1" max="4" step="1" value="1">
+          <span>–</span>
+          <input id="loopEndInput" type="number" min="1" max="4" step="1" value="4">
+        </div>
+        <div class="song-actions">
+          <button id="copyChainBtn" type="button" class="btn mini">COPY</button>
+          <button id="pasteChainBtn" type="button" class="btn mini">PASTE</button>
+          <button id="clearChainBtn" type="button" class="btn mini">CLEAR</button>
+          <button id="closeSongBtn" type="button" class="btn mini">CLOSE</button>
+        </div>
+      </div>
+      <div id="songGrid" class="song-grid"></div>
+      <div class="song-help">点击小节切换 A/B · COPY 复制整条 Chain，PASTE 粘贴 · LOOP 控制播放区间 · 关闭面板后照常播放</div>
+    </section>
+
+    <div class="legal">
+      Original CSS interface recreation inspired by the classic step-sequencer layout — no Roland logo, artwork or samples used.
+      Audio: FreePats Synthesizer Percussion (CC0 1.0), Sonic Pi CC0 808 kick (Freesound EKVelika #208447) + original synthesis.
+      “808” is used descriptively; this demo is not affiliated with Roland.
+    </div>
+  </div>
+</div>
+
+<div id="loading">
+  <div class="loading-card">
+    <div class="loading-title">RHYTHM COMPOSER 808</div>
+    <div id="loadStatus">initialising audio engine…</div>
+  </div>
+</div>
+
+<pre id="diag" hidden></pre>
+
+<script src="samples.js"></script>
+<script src="audio.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

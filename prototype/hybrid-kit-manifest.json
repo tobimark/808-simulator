@@ -1,0 +1,530 @@
+{
+  "name": "808-style hybrid kit POC",
+  "date": "2026-10-20",
+  "sample_source": {
+    "name": "FreePats Synthesizer Percussion (2022-07-18)",
+    "url": "https://freepats.zenvoid.org/Percussion/electric-percussion.html",
+    "license": "CC0 1.0 Universal",
+    "local_dir": "prototype/freepats-cc0-kit/samples/",
+    "used_files": [
+      "Clap01.wav",
+      "Claves01.wav",
+      "ClosedHiHat01-01.wav",
+      "Cymbal02.wav",
+      "HighTom02-01.wav",
+      "Kick06.wav",
+      "LowTom02-01.wav",
+      "MidTom02-01.wav",
+      "OpenHiHat02-01.wav",
+      "Snare09.wav"
+    ],
+    "provenance": "prototype/freepats-cc0-kit/PROVENANCE.md"
+  },
+  "synth_source": "prototype/808_poc.py (original code, no third-party samples)",
+  "channel_map": {
+    "BD": [
+      "BD"
+    ],
+    "SD": [
+      "SD"
+    ],
+    "LT": [
+      "LT",
+      "LC"
+    ],
+    "MT": [
+      "MT",
+      "MC"
+    ],
+    "HT": [
+      "HT",
+      "HC"
+    ],
+    "RS": [
+      "RS",
+      "CL"
+    ],
+    "CP": [
+      "CP",
+      "MA"
+    ],
+    "CB": [
+      "CB"
+    ],
+    "CY": [
+      "CY"
+    ],
+    "OH": [
+      "OH"
+    ],
+    "CH": [
+      "CH"
+    ]
+  },
+  "voices": [
+    {
+      "id": "BD",
+      "label": "Bass Drum",
+      "channel": "BD",
+      "kind": "hybrid",
+      "params": [
+        "level",
+        "tone",
+        "decay"
+      ],
+      "defaults": {
+        "level": 1.0,
+        "tone": 0.5,
+        "decay": 0.55
+      },
+      "pan": 0.0,
+      "sample": "Kick06.wav",
+      "sample_license": "CC0 1.0 (FreePats Synthesizer Percussion)",
+      "synth": "original synthesis layer (prototype/808_poc.py)"
+    },
+    {
+      "id": "SD",
+      "label": "Snare Drum",
+      "channel": "SD",
+      "kind": "hybrid",
+      "params": [
+        "level",
+        "tone",
+        "snappy"
+      ],
+      "defaults": {
+        "level": 0.72,
+        "tone": 0.5,
+        "snappy": 0.55
+      },
+      "pan": 0.0,
+      "sample": "Snare09.wav",
+      "sample_license": "CC0 1.0 (FreePats Synthesizer Percussion)",
+      "synth": "original synthesis layer (prototype/808_poc.py)"
+    },
+    {
+      "id": "LT",
+      "label": "Low Tom",
+      "channel": "LT",
+      "kind": "sample",
+      "params": [
+        "level",
+        "tuning"
+      ],
+      "defaults": {
+        "level": 0.52,
+        "tuning": 0.5
+      },
+      "pan": -0.25,
+      "sample": "LowTom02-01.wav",
+      "sample_license": "CC0 1.0 (FreePats Synthesizer Percussion)"
+    },
+    {
+      "id": "LC",
+      "label": "Low Conga",
+      "channel": "LT",
+      "kind": "synth",
+      "params": [
+        "level",
+        "tuning",
+        "decay"
+      ],
+      "defaults": {
+        "level": 0.5,
+        "tuning": 0.4,
+        "decay": 0.45
+      },
+      "pan": -0.25,
+      "synth": "original synthesis in prototype/808_poc.py (tom)"
+    },
+    {
+      "id": "MT",
+      "label": "Mid Tom",
+      "channel": "MT",
+      "kind": "sample",
+      "params": [
+        "level",
+        "tuning"
+      ],
+      "defaults": {
+        "level": 0.52,
+        "tuning": 0.5
+      },
+      "pan": 0.0,
+      "sample": "MidTom02-01.wav",
+      "sample_license": "CC0 1.0 (FreePats Synthesizer Percussion)"
+    },
+    {
+      "id": "MC",
+      "label": "Mid Conga",
+      "channel": "MT",
+      "kind": "synth",
+      "params": [
+        "level",
+        "tuning",
+        "decay"
+      ],
+      "defaults": {
+        "level": 0.5,
+        "tuning": 0.55,
+        "decay": 0.4
+      },
+      "pan": 0.0,
+      "synth": "original synthesis in prototype/808_poc.py (tom)"
+    },
+    {
+      "id": "HT",
+      "label": "High Tom",
+      "channel": "HT",
+      "kind": "sample",
+      "params": [
+        "level",
+        "tuning"
+      ],
+      "defaults": {
+        "level": 0.52,
+        "tuning": 0.5
+      },
+      "pan": 0.25,
+      "sample": "HighTom02-01.wav",
+      "sample_license": "CC0 1.0 (FreePats Synthesizer Percussion)"
+    },
+    {
+      "id": "HC",
+      "label": "High Conga",
+      "channel": "HT",
+      "kind": "synth",
+      "params": [
+        "level",
+        "tuning",
+        "decay"
+      ],
+      "defaults": {
+        "level": 0.5,
+        "tuning": 0.7,
+        "decay": 0.35
+      },
+      "pan": 0.25,
+      "synth": "original synthesis in prototype/808_poc.py (tom)"
+    },
+    {
+      "id": "RS",
+      "label": "Rimshot",
+      "channel": "RS",
+      "kind": "synth",
+      "params": [
+        "level"
+      ],
+      "defaults": {
+        "level": 0.42
+      },
+      "pan": -0.15,
+      "synth": "original synthesis in prototype/808_poc.py (rimshot)"
+    },
+    {
+      "id": "CL",
+      "label": "Claves",
+      "channel": "RS",
+      "kind": "sample",
+      "params": [
+        "level"
+      ],
+      "defaults": {
+        "level": 0.4
+      },
+      "pan": -0.15,
+      "sample": "Claves01.wav",
+      "sample_license": "CC0 1.0 (FreePats Synthesizer Percussion)"
+    },
+    {
+      "id": "CP",
+      "label": "Hand Clap",
+      "channel": "CP",
+      "kind": "sample",
+      "params": [
+        "level"
+      ],
+      "defaults": {
+        "level": 0.55
+      },
+      "pan": 0.0,
+      "sample": "Clap01.wav",
+      "sample_license": "CC0 1.0 (FreePats Synthesizer Percussion)"
+    },
+    {
+      "id": "MA",
+      "label": "Maracas",
+      "channel": "CP",
+      "kind": "synth",
+      "params": [
+        "level"
+      ],
+      "defaults": {
+        "level": 0.22
+      },
+      "pan": -0.4,
+      "synth": "original synthesis in prototype/808_poc.py (maracas)"
+    },
+    {
+      "id": "CB",
+      "label": "Cowbell",
+      "channel": "CB",
+      "kind": "synth",
+      "params": [
+        "level"
+      ],
+      "defaults": {
+        "level": 0.38
+      },
+      "pan": 0.3,
+      "synth": "original synthesis in prototype/808_poc.py (cowbell)"
+    },
+    {
+      "id": "CY",
+      "label": "Cymbal",
+      "channel": "CY",
+      "kind": "sample",
+      "params": [
+        "level",
+        "tone",
+        "decay"
+      ],
+      "defaults": {
+        "level": 0.42,
+        "tone": 0.5,
+        "decay": 0.6
+      },
+      "pan": 0.35,
+      "sample": "Cymbal02.wav",
+      "sample_license": "CC0 1.0 (FreePats Synthesizer Percussion)"
+    },
+    {
+      "id": "OH",
+      "label": "Open Hat",
+      "channel": "OH",
+      "kind": "sample",
+      "params": [
+        "level",
+        "decay"
+      ],
+      "defaults": {
+        "level": 0.34,
+        "decay": 0.5
+      },
+      "pan": 0.3,
+      "sample": "OpenHiHat02-01.wav",
+      "sample_license": "CC0 1.0 (FreePats Synthesizer Percussion)"
+    },
+    {
+      "id": "CH",
+      "label": "Closed Hat",
+      "channel": "CH",
+      "kind": "sample",
+      "params": [
+        "level"
+      ],
+      "defaults": {
+        "level": 0.3
+      },
+      "pan": -0.3,
+      "sample": "ClosedHiHat01-01.wav",
+      "sample_license": "CC0 1.0 (FreePats Synthesizer Percussion)"
+    }
+  ],
+  "outputs": {
+    "demo": {
+      "file": "hybrid-kit-demo.wav",
+      "bpm": 120.0,
+      "bars": 4,
+      "events": 96,
+      "duration_s": 11.0,
+      "peak_dbfs": -1.01,
+      "rms_dbfs": -10.85,
+      "clipped_samples": 0,
+      "voiced_peaks_dbfs": {
+        "BD": 1.11,
+        "SD": -3.43,
+        "LT": -8.98,
+        "LC": -240.0,
+        "MT": -6.13,
+        "MC": -240.0,
+        "HT": -6.13,
+        "HC": -240.0,
+        "RS": -12.45,
+        "CL": -240.0,
+        "CP": -5.64,
+        "MA": -4.37,
+        "CB": -8.65,
+        "CY": -9.39,
+        "OH": -12.7,
+        "CH": -10.9
+      }
+    },
+    "audition": {
+      "file": "hybrid-kit-voices.wav",
+      "gap_s": 1.2,
+      "order": [
+        {
+          "id": "BD",
+          "label": "Bass Drum",
+          "start_s": 0.0
+        },
+        {
+          "id": "SD",
+          "label": "Snare Drum",
+          "start_s": 1.2
+        },
+        {
+          "id": "LT",
+          "label": "Low Tom",
+          "start_s": 2.4
+        },
+        {
+          "id": "LC",
+          "label": "Low Conga",
+          "start_s": 3.6
+        },
+        {
+          "id": "MT",
+          "label": "Mid Tom",
+          "start_s": 4.8
+        },
+        {
+          "id": "MC",
+          "label": "Mid Conga",
+          "start_s": 6.0
+        },
+        {
+          "id": "HT",
+          "label": "High Tom",
+          "start_s": 7.2
+        },
+        {
+          "id": "HC",
+          "label": "High Conga",
+          "start_s": 8.4
+        },
+        {
+          "id": "RS",
+          "label": "Rimshot",
+          "start_s": 9.6
+        },
+        {
+          "id": "CL",
+          "label": "Claves",
+          "start_s": 10.8
+        },
+        {
+          "id": "CP",
+          "label": "Hand Clap",
+          "start_s": 12.0
+        },
+        {
+          "id": "MA",
+          "label": "Maracas",
+          "start_s": 13.2
+        },
+        {
+          "id": "CB",
+          "label": "Cowbell",
+          "start_s": 14.4
+        },
+        {
+          "id": "CY",
+          "label": "Cymbal",
+          "start_s": 15.6
+        },
+        {
+          "id": "OH",
+          "label": "Open Hat",
+          "start_s": 16.8
+        },
+        {
+          "id": "CH",
+          "label": "Closed Hat",
+          "start_s": 18.0
+        }
+      ]
+    },
+    "param_audition": {
+      "file": "hybrid-kit-params.wav",
+      "gap_s": 1.7,
+      "order": [
+        {
+          "voice": "BD",
+          "label": "BD decay 0.10",
+          "start_s": 0.0
+        },
+        {
+          "voice": "BD",
+          "label": "BD decay 0.90",
+          "start_s": 1.7
+        },
+        {
+          "voice": "SD",
+          "label": "SD snappy 0.10",
+          "start_s": 3.4
+        },
+        {
+          "voice": "SD",
+          "label": "SD snappy 0.90",
+          "start_s": 5.1
+        },
+        {
+          "voice": "LT",
+          "label": "LT tuning 0.20",
+          "start_s": 6.8
+        },
+        {
+          "voice": "LT",
+          "label": "LT tuning 0.80",
+          "start_s": 8.5
+        },
+        {
+          "voice": "OH",
+          "label": "OH decay 0.10",
+          "start_s": 10.2
+        },
+        {
+          "voice": "OH",
+          "label": "OH decay 0.90",
+          "start_s": 11.9
+        },
+        {
+          "voice": "CY",
+          "label": "CY decay 0.10",
+          "start_s": 13.6
+        },
+        {
+          "voice": "CY",
+          "label": "CY decay 0.90",
+          "start_s": 15.3
+        }
+      ]
+    }
+  },
+  "checks": {
+    "all_finite": true,
+    "bd_decay_tail_ratio": 6.763,
+    "bd_decay_responds": true,
+    "sd_snappy_high_band_ratio": 3.174,
+    "sd_snappy_responds": true,
+    "lt_tuning_low_peak_hz": 66.0,
+    "lt_tuning_high_peak_hz": 93.4,
+    "lt_tuning_responds": true,
+    "oh_decay_tail_ratio": 2.697,
+    "oh_decay_responds": true,
+    "open_hat_events": 15,
+    "open_hat_choked_by_closed_hat": "15/15",
+    "note": "objective signal checks only; no listening test performed"
+  },
+  "parameter_notes": [
+    "BD: FreePats Kick06 body + synthesised low-passed sub; Tone moves sub pitch and body LPF, Decay only the synth tail.",
+    "SD: FreePats Snare09 body + synthesised noise layer; Tone is approximated by a LPF, Snappy by noise level/decay.",
+    "Toms: Tuning is sample playback rate; no Decay parameter in classic 808 toms.",
+    "Congas / Rimshot / Cowbell / Maracas: original synthesis (not from the CC0 kit).",
+    "Cymbal / open hat: Tone is approximated by a LPF; Decay by an exponential envelope over the sample.",
+    "No listening test has been performed; all levels are provisional."
+  ],
+  "licensing_status": "CC0 samples may be redistributed in the app; synth parts are original. See docs/sound-acquisition.zh-CN.md."
+}
